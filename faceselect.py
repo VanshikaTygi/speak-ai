@@ -63,7 +63,7 @@ class Eye(object):
         self.circ = circ
 
 
-class Mouth(object):
+class MouthData(object):
 
     def from_values(self, x, y, w, h, pixbuf):
         self.x = x
@@ -170,7 +170,7 @@ class FaceSelector(Gtk.VBox):
         self.emit('face-processed', self._drawing.get_pixbuf(),
                   Eye(left_eye_center, left_eye_circ),
                   Eye(right_eye_center, right_eye_circ),
-                  Mouth().create(mouth_y, mouth_x_left, mouth_x_right,
+                  MouthData().create(mouth_y, mouth_x_left, mouth_x_right,
                                  self._drawing.get_pixbuf()))
 
     def _add_widget(self, widget):

@@ -31,7 +31,7 @@ import sugar3.graphics.style as style
 import voice
 import speech
 from faceselect import Eye
-from faceselect import Mouth
+from faceselect import MouthData
 
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -99,7 +99,7 @@ class Status(object):
 
         m = data['mouth']
         mouth_pixbuf = _b64_to_pixbuf(m['pixbuf'])
-        self.mouth = Mouth()
+        self.mouth = MouthData()
         self.mouth.from_values(m['x'], m['y'], m['w'], m['h'], mouth_pixbuf)
 
         return self
